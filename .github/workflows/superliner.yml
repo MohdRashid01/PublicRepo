@@ -14,4 +14,4 @@ jobs:
         uses: github/ci@v2
         env: 
           DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
