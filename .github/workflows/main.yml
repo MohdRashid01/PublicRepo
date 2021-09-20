@@ -1,0 +1,21 @@
+name: python installing
+on: [push, pull_request]
+jobs: 
+  install-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Install python version
+        uses: MohdRashid01/test@v7
+        with:
+          default: 3.8.6
+          command: pip install -U pip
+          
+      - name: create env
+        run: py local 3.8.6 && python -mvenv .venv386
+       
+      - name: Install dependencies
+        run: pip install -r requirements.txt --upgrade pip
+        
+      - name: setup pyenv
+        id: py_installation
